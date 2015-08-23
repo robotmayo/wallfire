@@ -1,0 +1,12 @@
+{
+  "database" : {
+    "user" : "root",
+    "password" : "root",
+    "database" : "wallfire_test",
+    "connectionLimit" : 20,
+    "port" : ""
+  },
+  "aws" : {
+    "imagesBucket" : ""
+  }
+}
