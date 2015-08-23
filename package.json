@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "aws-sdk": "^2.1.46",
+    "bcrypt": "^0.8.5",
     "bluebird": "^2.9.34",
     "file-type": "^2.10.2",
     "handlebars": "^3.0.3",
