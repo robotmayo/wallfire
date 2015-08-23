@@ -1,0 +1,35 @@
+{
+  "name": "wallfire",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1.46",
+    "file-type": "^2.10.2",
+    "handlebars": "^3.0.3",
+    "hapi": "^9.0.3",
+    "mysql": "^2.9.0",
+    "node-uuid": "^1.4.3",
+    "phash-image": "^3.2.0",
+    "through": "^2.3.8",
+    "through2": "^2.0.0",
+    "vision": "^3.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robotmayo/wallfire.git"
+  },
+  "author": "robotmayo",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/robotmayo/wallfire/issues"
+  },
+  "homepage": "https://github.com/robotmayo/wallfire#readme"
+}
