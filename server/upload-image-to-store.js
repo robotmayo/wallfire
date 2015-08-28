@@ -1,13 +1,13 @@
-var paws = require('./paws');
-var fs = require('fs');
-var config = require('./config');
+var paws = require('./utils/paws');
+var config = require('./config/config');
 var xtend = require('xtend');
-module.exports = function(fileData){
+var mime = require('./utils/mime');
+module.exports = function(data){
   return paws.S3.upload({
-    Key : fileData.fileName,
-    Body : fs.createReadStream(fileData.filePath),
+    Key : data.imageName,
+    Body : data.stream,
     ACL : 'public-read',
     Bucket : config.aws.imagesBucket
   })
-  .then(xtend.bind(null, {id : fileData.fileName, uploadName : fileData.uploadName}))
+  .then(xtend.bind(null, {id : data.imageName, uploadName : data.uploadName}))
 }

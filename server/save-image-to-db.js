@@ -1,6 +1,7 @@
 var db = require('./db');
 var xtend = require('xtend');
 module.exports = function saveImageToDb(data){
+  console.log(data)
   return db.query('INSERT INTO images SET ? ',{
     id : data.id,
     path : data.Location,

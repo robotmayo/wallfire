@@ -1,4 +1,4 @@
-var mime = require('./mime');
+var mime = require('./utils/mime');
 var fs = require('fs');
 var crypto = require('crypto');
 var getExt = require('./get-ext');
