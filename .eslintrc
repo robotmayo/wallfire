@@ -1,0 +1,22 @@
+{
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "ecmaFeatures": {
+    "blockBindings": true,
+    "forOf": true,
+    "jsx": true
+  },
+  "rules": {
+    "semi": [2, "always"],  
+    "comma-dangle": [2, "never"],
+    "no-cond-assign" : [2, "always"],
+    "no-console" : 1,
+    "no-constant-condition" : 2,
+    "no-control-regex" : 1,
+    "no-debugger" : 2,semi: [2, "always"],
+    "no-unused-vars" : 2,
+    "no-undef" : 2
+  }
+}

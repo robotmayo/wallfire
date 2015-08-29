@@ -1,0 +1,6 @@
+CREATE TABLE `sessions` (
+  `session_id` VARCHAR(32) DEFAULT NULL,
+  `username` VARCHAR(60) NOT NULL DEFAULT '',
+  `ttl` DATETIME NOT NULL,
+  PRIMARY KEY (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1

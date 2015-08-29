@@ -1,8 +1,8 @@
-var DB = require('./db');
+var DB = require('../db');
 var PromisifyAll = require('bluebird').promisifyAll;
 var bcrypt = PromisifyAll(require('bcrypt'));
 var xtend = require('xtend');
-var randomString = require('./utils/random-string');
+var randomString = require('../utils/random-string');
 
 function createUser(userdata){
   return bcrypt
@@ -47,16 +47,16 @@ function saveSession(username){
       [{session_id : sessionId, username : username, ttl : new Date(ttl)}, sessionId, new Date(ttl)])
     .then(function(){
       return {sessionId : sessionId, ttl : ttl, username : username};
-    })
-  })
+    });
+  });
 }
 
 function getHashFromDB(username){
   return DB.query('SELECT password FROM users WHERE username = ?', username)
   .then(function(results){
-    console.log(results[0][0].password)
-    if(results[0].length === 0) return Promise.reject(new Error('User does not exist'))
+    console.log(results[0][0].password);
+    if(results[0].length === 0) return Promise.reject(new Error('User does not exist'));
     return results[0][0].password;
-  })
+  });
 }
 module.exports.getHashFromDB = getHashFromDB;
