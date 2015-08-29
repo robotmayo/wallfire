@@ -50,3 +50,15 @@ function checkImageForTag(data){
     return results[0].length > 0;
   });
 }
+module.exports.checkImageForTag = checkImageForTag;
+
+function getAllTagsFromImage(data){
+  return DB.query(
+    'SELECT t.id, t.tag_name FROM image_tags as itags ' + 
+    'JOIN tags as t ON t.id = itags.tag_id WHERE itags.wallpaper_id = ?'
+    , data.imageId)
+  .then(function(results){
+    return results[0];
+  });
+}
+module.exports.getAllTagsFromImage = getAllTagsFromImage;

@@ -13,4 +13,17 @@ const addTag = {
     });
   }
 };
-module.exports.routes = [addTag];
+
+const getAllTagsFromImage = {
+  method : 'GET',
+  path : '/tags/{image_id}',
+  handler : function(request, reply){
+    Tags.getAllTagsFromImage({imageId  : request.params.image_id})
+    .then(function(tags){
+      reply(tags);
+    })
+    .catch(x => {console.error(x); reply(x);});
+  }
+};
+
+module.exports.routes = [addTag, getAllTagsFromImage];
